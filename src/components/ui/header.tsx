@@ -14,6 +14,7 @@ import Link from "next/link";
 import config from "@/config";
 import Image from "next/image";
 import logo from "@/app/icon.png";
+import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 const Navbar = () => {
     return (
         <Card className="container bg-card py-3 px-4 border-0 flex items-center justify-between gap-6 rounded-2xl mt-5">
@@ -68,9 +69,16 @@ const Navbar = () => {
             </ul>
 
             <div className="flex items-center">
-                <Button variant="secondary" className="hidden md:block px-2">
-                    Login
-                </Button>
+                <SignedOut>
+                    <SignInButton>
+                        <Button variant="secondary" className="hidden md:block px-2">
+                            Login
+                        </Button>
+                    </SignInButton>
+                </SignedOut>
+                <SignedIn>
+                    <UserButton />
+                </SignedIn>
                 <Button className="hidden md:block ml-2 mr-2">Get Started</Button>
 
                 <div className="flex md:hidden mr-2 items-center gap-2">
