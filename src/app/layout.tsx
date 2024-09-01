@@ -4,6 +4,9 @@ import { ClerkProvider } from '@clerk/nextjs';
 import "./globals.css";
 import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme-provider"
+// import Header from "@/components/ui/header/header";
+import Navbar from "@/components/ui/header/navbar";
+import Footer from "@/components/ui/footer";
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -23,22 +26,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         },
       }}
     >
-      <html lang="en" className="">
+      <html lang="en" suppressHydrationWarning>
         <body
           className={cn(
             "min-h-screen bg-background font-sans antialiased",
             fontSans.variable
           )}
         >
+
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="light"
             enableSystem
             themes={['light', 'dark', 'yellow']}
             disableTransitionOnChange
           >
-
-            {children}
+            <main className="flex min-h-screen flex-col  justify-between">
+              <Navbar />
+              {children}
+              <Footer />
+            </main>
           </ThemeProvider>
         </body>
       </html>
