@@ -76,25 +76,15 @@ const Navbar = () => {
                         </Button>
                     </SignInButton>
                 </SignedOut>
-                <SignedIn>
-                    <UserButton />
-                </SignedIn>
+
                 <Button className="hidden md:block ml-2 mr-2">Get Started</Button>
-
+                <SignedIn>
+                    <div className="hidden md:block">
+                        <UserButton />
+                    </div>
+                </SignedIn>
                 <div className="flex md:hidden mr-2 items-center gap-2">
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                            <span className="py-2 px-2 bg-gray-100 rounded-md">Pages</span>
-                        </DropdownMenuTrigger>
 
-                        <DropdownMenuContent align="start">
-                            {landings.map((page) => (
-                                <DropdownMenuItem key={page.id}>
-                                    <Link href={page.route}>{page.title}</Link>
-                                </DropdownMenuItem>
-                            ))}
-                        </DropdownMenuContent>
-                    </DropdownMenu>
 
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
@@ -117,15 +107,23 @@ const Navbar = () => {
                                 <a href="#faqs">FAQs</a>
                             </DropdownMenuItem>
                             <DropdownMenuItem>
-                                <Button variant="secondary" className="w-full text-sm">
-                                    Login
-                                </Button>
+
+                                <SignedOut>
+                                    <SignInButton>
+                                        <Button variant="secondary" className=" w-full text-sm  px-2">
+                                            Login
+                                        </Button>
+                                    </SignInButton>
+                                </SignedOut>
                             </DropdownMenuItem>
                             <DropdownMenuItem>
                                 <Button className="w-full text-sm">Get Started</Button>
                             </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
+                    <SignedIn>
+                        <UserButton />
+                    </SignedIn>
                 </div>
 
                 <ThemeToggle />
