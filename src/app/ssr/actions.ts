@@ -11,7 +11,6 @@ export async function addTask(name: string) {
 }
 
 export async function deleteTask(taskId: number) {
-  console.log('🍎 delete', taskId);
   await client.from("tasks").delete().eq("id", taskId)
 }
 
