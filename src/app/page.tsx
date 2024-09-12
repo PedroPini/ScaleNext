@@ -1,5 +1,5 @@
 
-
+import { PricingOptions } from '@/components/pricing-options'
 
 export default function Home() {
   return (
@@ -74,7 +74,7 @@ export default function Home() {
           </p>
         </a>
       </div>
-
+      <PricingOptions />
 
 
     </div>

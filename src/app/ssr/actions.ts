@@ -1,6 +1,6 @@
 'use server'
 
-import { createClerkSupabaseClient } from "@/utils/supabase/client"
+import { createClerkSupabaseClient } from "@/utils/supabase/server"
 
 const client = createClerkSupabaseClient();
 

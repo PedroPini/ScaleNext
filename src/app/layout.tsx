@@ -3,11 +3,12 @@ import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google"
 import { ClerkProvider } from '@clerk/nextjs';
 import "./globals.css";
-import { cn } from "@/lib/utils"
+import { cn } from "@/libs/utils"
 import { ThemeProvider } from "@/components/theme-provider"
 // import Header from "@/components/ui/header/header";
 import NavbarSkeleton from "@/components/ui/header/navbar-skeleton"
 import FooterSkeleton from "@/components/ui/footer-skeleton"
+
 // Lazy load Navbar and Footer with skeletons
 const Navbar = dynamic(() => import("@/components/ui/header/navbar"), {
   loading: () => <NavbarSkeleton />,

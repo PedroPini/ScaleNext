@@ -1,6 +1,6 @@
 // import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import dynamic from 'next/dynamic';
-
+import NavbarUserButton from '@/components/ui/header/clerk/user-button'
 // Dynamically import components
 const SignInButton = dynamic(() => import('@clerk/nextjs').then(mod => mod.SignInButton));
 const SignedIn = dynamic(() => import('@clerk/nextjs').then(mod => mod.SignedIn));
@@ -17,7 +17,7 @@ const AuthButtons = () => (
         </SignedOut>
         <Button className="hidden md:block ml-2 mr-2">Get Started</Button>
         <SignedIn>
-            <div className="hidden md:block"><UserButton /></div>
+            <div className="hidden md:block"><NavbarUserButton /> </div>
         </SignedIn>
     </div>
 );
