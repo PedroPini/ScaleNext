@@ -4,7 +4,7 @@ import Stripe from "stripe";
 import { clerkClient, currentUser } from '@clerk/nextjs/server'
 import configFile from "@/config";
 
-import stripe from "../../../../libs/stripe"
+import stripe from "@/libs/stripe"
 
 // Stripe webhook secret
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET as string;
@@ -55,22 +55,6 @@ export async function POST(req: Request): Promise<Response> {
           }
         }
       );
-        // const session = await findCheckoutSession(data.id);
-        // const customerId = session?.customer as string;
-        // const priceId = session?.line_items?.data[0]?.price.id as string;
-        // const userId = data.client_reference_id as string;
-        // const plan = configFile.stripe.plans.find((p) => p.priceId === priceId);
-
-        // if (!plan) break;
-
-        // // Update Clerk user metadata
-        // const metadataUpdate: ClerkMetadataUpdate = {
-        //   customer_id: customerId,
-        //   price_id: priceId,
-        //   has_access: true,
-        // };
-
-        // await Clerk.users.updateUserMetadata(userId, { privateMetadata: metadataUpdate });
 
         break;
       }
@@ -106,18 +90,6 @@ export async function POST(req: Request): Promise<Response> {
       }
 
       case "invoice.paid": {
-        // const priceId = data.lines.data[0].price.id as string;
-        // const customerId = data.customer as string;
-
-        // // Get Clerk user by customer ID
-        // const user = await Clerk.users.getUserByCustomerId(customerId);
-
-        // if (user?.privateMetadata?.price_id !== priceId) break;
-
-        // // Grant access in Clerk metadata
-        // await Clerk.users.updateUserMetadataByCustomerId(customerId, {
-        //   privateMetadata: { has_access: true },
-        // });
 
         break;
       }
