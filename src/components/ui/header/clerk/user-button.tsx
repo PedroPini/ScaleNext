@@ -1,11 +1,20 @@
 'use client'
 
-import { useState } from 'react';
-import { UserButton } from '@clerk/nextjs';
+import { useState, useEffect } from 'react';
+import { UserButton, useUser } from '@clerk/nextjs';
 
-// ManageSubscription function moved here
 export default function NavbarUserButton() {
-    const [loading, setLoading] = useState(false);
+    const { user, isLoaded } = useUser(); // useUser hook to get the user data
+    const [loading, setLoading] = useState(true);
+    const [isSubscriber, setIsSubscriber] = useState(false);
+
+    useEffect(() => {
+        if (isLoaded && user) {
+            const isPaid = user?.publicMetadata?.stripe?.status === "complete";
+            setIsSubscriber(isPaid);
+            setLoading(false);
+        }
+    }, [isLoaded, user]);
 
     const handleManageSubscription = async () => {
         setLoading(true);
@@ -44,17 +53,18 @@ export default function NavbarUserButton() {
 
     return (
         <header>
-            {!loading && (
-                <UserButton>
-                    <UserButton.MenuItems>
+            <UserButton>
+                <UserButton.MenuItems>
+                    {!loading && isSubscriber && (
                         <UserButton.Action
                             label="Manage Subscription"
                             labelIcon={<DotIcon />}
                             onClick={handleManageSubscription}
                         />
-                    </UserButton.MenuItems>
-                </UserButton>
-            )}
+                    )}
+                </UserButton.MenuItems>
+
+            </UserButton>
         </header>
     );
 }

@@ -5,7 +5,6 @@ import NavbarUserButton from '@/components/ui/header/clerk/user-button'
 const SignInButton = dynamic(() => import('@clerk/nextjs').then(mod => mod.SignInButton));
 const SignedIn = dynamic(() => import('@clerk/nextjs').then(mod => mod.SignedIn));
 const SignedOut = dynamic(() => import('@clerk/nextjs').then(mod => mod.SignedOut));
-const UserButton = dynamic(() => import('@clerk/nextjs').then(mod => mod.UserButton));
 import { Button } from '@/components/ui/button';
 
 const AuthButtons = () => (
