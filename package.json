@@ -10,7 +10,7 @@
     "analyze": "ANALYZE=true npm run build"
   },
   "dependencies": {
-    "@clerk/nextjs": "^5.3.4",
+    "@clerk/nextjs": "^5.5.3",
     "@next/bundle-analyzer": "^14.2.7",
     "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-dropdown-menu": "^2.1.1",
