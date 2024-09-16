@@ -3,9 +3,9 @@ import { headers } from "next/headers";
 import Stripe from "stripe";
 import { clerkClient, currentUser } from '@clerk/nextjs/server'
 import configFile from "@/config";
-
+import { SendEmail } from "@/libs/resend"
 import stripe from "@/libs/stripe"
-
+import {StripeWelcome } from "@/components/email/stripe/welcome"
 // Stripe webhook secret
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET as string;
 
@@ -37,8 +37,8 @@ export async function POST(req: Request): Promise<Response> {
     switch (eventType) {
       case "checkout.session.completed": {
       const session = event.data.object;
-      const customerId = session?.customer as string
-      console.log(`Payment successful for session ID: ${session.id}`);
+      const customerId = session?.customer as string;
+      const customerEmail = session.customer_details?.email;
       clerkClient.users.updateUserMetadata(
         event.data.object.metadata?.userId as string,
         {
@@ -55,6 +55,9 @@ export async function POST(req: Request): Promise<Response> {
           }
         }
       );
+      if (customerEmail) { 
+        SendEmail({customerEmail, emailTemplate: StripeWelcome});
+      }
 
         break;
       }
