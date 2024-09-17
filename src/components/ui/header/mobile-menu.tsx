@@ -1,7 +1,7 @@
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Menu } from 'lucide-react';
 import dynamic from 'next/dynamic';
-
+import config from '@/config';
 // Dynamically import components
 const SignInButton = dynamic(() => import('@clerk/nextjs').then(mod => mod.SignInButton));
 const SignedIn = dynamic(() => import('@clerk/nextjs').then(mod => mod.SignedIn));
@@ -18,10 +18,11 @@ const MobileMenu = () => (
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-                <DropdownMenuItem><a href="#home">Home</a></DropdownMenuItem>
-                <DropdownMenuItem><a href="#features">Features</a></DropdownMenuItem>
-                <DropdownMenuItem><a href="#pricing">Pricing</a></DropdownMenuItem>
-                <DropdownMenuItem><a href="#faqs">FAQs</a></DropdownMenuItem>
+                {config.navigation.map((item, index) => (
+                    <DropdownMenuItem key={index} className={item.className || ""}>
+                        <a href={item.href}>{item.label}</a>
+                    </DropdownMenuItem>
+                ))}
                 <DropdownMenuItem>
                     <SignedOut>
                         <SignInButton>
