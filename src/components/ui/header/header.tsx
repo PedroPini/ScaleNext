@@ -39,18 +39,11 @@ const Navbar = () => {
                 </Link>
             </div>
             <ul className="hidden md:flex items-center gap-10 text-card-foreground">
-                <li className="text-primary font-medium">
-                    <a href="#home">Home</a>
-                </li>
-                <li>
-                    <a href="#features">Features</a>
-                </li>
-                <li>
-                    <a href="#pricing">Pricing</a>
-                </li>
-                <li>
-                    <a href="#faqs">FAQs</a>
-                </li>
+                {config.navigation.map((item, index) => (
+                    <DropdownMenuItem key={index} className={item.className || ""}>
+                        <a href={item.href}>{item.label}</a>
+                    </DropdownMenuItem>
+                ))}
                 <li>
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
@@ -83,49 +76,6 @@ const Navbar = () => {
                         <UserButton />
                     </div>
                 </SignedIn>
-                <div className="flex md:hidden mr-2 items-center gap-2">
-
-
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                            <Button variant="outline" size="icon">
-                                <Menu className="h-5 w-5 rotate-0 scale-100" />
-                            </Button>
-                        </DropdownMenuTrigger>
-
-                        <DropdownMenuContent align="end">
-                            <DropdownMenuItem>
-                                <a href="#home">Home</a>
-                            </DropdownMenuItem>
-                            <DropdownMenuItem>
-                                <a href="#features">Features</a>
-                            </DropdownMenuItem>
-                            <DropdownMenuItem>
-                                <a href="#pricing">Pricing</a>
-                            </DropdownMenuItem>
-                            <DropdownMenuItem>
-                                <a href="#faqs">FAQs</a>
-                            </DropdownMenuItem>
-                            <DropdownMenuItem>
-
-                                <SignedOut>
-                                    <SignInButton>
-                                        <Button variant="secondary" className=" w-full text-sm  px-2">
-                                            Login
-                                        </Button>
-                                    </SignInButton>
-                                </SignedOut>
-                            </DropdownMenuItem>
-                            <DropdownMenuItem>
-                                <Button className="w-full text-sm">Get Started</Button>
-                            </DropdownMenuItem>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
-                    <SignedIn>
-                        <UserButton />
-                    </SignedIn>
-                </div>
-
                 <ThemeToggle />
             </div>
         </Card>
