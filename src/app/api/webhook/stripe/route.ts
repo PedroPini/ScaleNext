@@ -55,9 +55,27 @@ export async function POST(req: Request): Promise<Response> {
           }
         }
       );
-      if (customerEmail) { 
-        SendEmail({customerEmail, emailTemplate: StripeWelcome});
-      }
+       // Check if the session has an invoice
+      const invoiceId = session.invoice as string;
+      if (invoiceId && customerEmail) { 
+         // Fetch the invoice using the Stripe API
+    const invoice = await stripe.invoices.retrieve(invoiceId);
+    
+    // Generate the invoice PDF link
+    const invoicePdf = invoice.invoice_pdf;
+
+    // Use your email service to send an email with the invoice link or attachment
+    await SendEmail({
+      customerEmail,
+      emailTemplate: StripeWelcome,
+      attachments: [
+        {
+          filename: "Invoice.pdf",
+          path: invoicePdf, // This is the URL to the PDF, can be included as an attachment
+        },
+      ],
+    });
+  }
 
         break;
       }
