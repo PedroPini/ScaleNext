@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Switch } from "@/components/ui/switch"
 import { Check, Loader2 } from "lucide-react"
 import { loadStripe } from '@stripe/stripe-js'
-
+import ContactForm from "@/components/email/forms/modal/contact-form"
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
 
 interface PricingPlan {
@@ -110,7 +110,8 @@ const PricingCard = ({
 }
 
 export function PricingOptions() {
-  const [isYearly, setIsYearly] = useState(false)
+  const [isYearly, setIsYearly] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   const [loadingStates, setLoadingStates] = useState<{ [key: string]: boolean }>({})
   const router = useRouter()
 
@@ -119,7 +120,7 @@ export function PricingOptions() {
       if (planTitle === "Hobby") {
         router.push('/csr')
       } else if (planTitle === "Enterprise") {
-        console.log("Contact sales for Enterprise plan")
+        setOpenModal(true);
       }
       return
     }
@@ -175,6 +176,7 @@ export function PricingOptions() {
           />
         ))}
       </div>
+      <ContactForm open={openModal} setOpen={setOpenModal} />
     </div>
   )
 }

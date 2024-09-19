@@ -5,7 +5,7 @@ import { clerkClient, currentUser } from '@clerk/nextjs/server'
 import configFile from "@/config";
 import { SendEmail } from "@/libs/resend"
 import stripe from "@/libs/stripe"
-import {StripeWelcome } from "@/components/email/stripe/welcome"
+import {StripeWelcome } from "@/components/email/react-email/stripe/welcome"
 // Stripe webhook secret
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET as string;
 
