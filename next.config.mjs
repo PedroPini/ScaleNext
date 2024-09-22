@@ -1,7 +1,9 @@
 
 const isDev = process.env.NODE_ENV !== "production";
 import withBundleAnalyzer from '@next/bundle-analyzer';
+import { createMDX } from 'fumadocs-mdx/next';
 
+const withMDX = createMDX();
 /** @type {import('next').NextConfig} */
 const nextConfig = withBundleAnalyzer({
     enabled: process.env.ANALYZE === 'true',
@@ -35,5 +37,9 @@ const nextConfig = withBundleAnalyzer({
 //     ];
 //   },
 });
-
-export default nextConfig;
+const combinedConfig = {
+    ...nextConfig,
+    ...withMDX(nextConfig),
+  };
+  
+  export default combinedConfig;

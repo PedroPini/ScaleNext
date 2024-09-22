@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { useSession, useUser } from '@clerk/nextjs'
-import Layout from '@/app/shared/layout'
+import Layout from '@/app/(saas)/shared/layout'
 import { useClerkSupabaseClient } from '@/utils/supabase/client'
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";

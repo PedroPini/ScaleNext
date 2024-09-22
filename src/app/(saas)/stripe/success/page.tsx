@@ -47,6 +47,7 @@ export default function SuccessPage() {
     }
 
     return (
+
         <div className="container mx-auto py-10 flex justify-center items-center min-h-screen">
             <Card className="w-full max-w-md">
                 <CardHeader>
@@ -69,5 +70,6 @@ export default function SuccessPage() {
                 </CardFooter>
             </Card>
         </div>
+
     )
 }
