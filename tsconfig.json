@@ -24,6 +24,6 @@
 
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/libs/api.js",  "./source.config.ts", ".source/*"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/libs/api.js", ".source/*"],
   "exclude": ["node_modules"]
 }
