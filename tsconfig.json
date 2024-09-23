@@ -20,9 +20,10 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/config": ["./config.js"],
-      "@/utils/*": ["./utils/*"]
+      "@/utils/*": ["./utils/*"],
+
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/libs/api.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/libs/api.js",  "./source.config.ts", ".source/*"],
   "exclude": ["node_modules"]
 }

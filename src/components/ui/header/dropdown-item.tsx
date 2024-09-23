@@ -1,5 +1,13 @@
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import Link from "next/link";
 import { nanoid } from "nanoid";
-export const landings = [
+
+const landings = [
     {
         id: nanoid(),
         title: "Landing 01",
@@ -46,3 +54,22 @@ export const landings = [
         route: "/career-landing",
     },
 ];
+
+const LandingsDropdown = () => {
+    return (
+        <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+                <span className="cursor-pointer">Pages</span>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start">
+                {landings.map((page) => (
+                    <DropdownMenuItem key={page.id}>
+                        <Link href={page.route}>{page.title}</Link>
+                    </DropdownMenuItem>
+                ))}
+            </DropdownMenuContent>
+        </DropdownMenu>
+    );
+};
+
+export default LandingsDropdown;

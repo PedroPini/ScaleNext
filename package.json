@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "analyze": "ANALYZE=true npm run build"
+    "analyze": "ANALYZE=true npm run build",
+    "postinstall": "fumadocs-mdx"
   },
   "dependencies": {
     "@clerk/nextjs": "^5.3.4",
@@ -26,6 +27,9 @@
     "axios": "^1.7.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "fumadocs-core": "^13.4.10",
+    "fumadocs-mdx": "^10.0.2",
+    "fumadocs-ui": "^13.4.10",
     "lucide-react": "^0.429.0",
     "next": "14.2.6",
     "next-themes": "^0.3.0",
