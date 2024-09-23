@@ -19,6 +19,7 @@ A modern and highly scalable Next.js boilerplate with integrated authentication,
 - **[Shadcn](https://shadcn.dev/)**: Pre-built UI components integrated with Tailwind CSS for a great developer experience.
 - **[Clerk](https://clerk.dev/)**: Comprehensive user authentication and management solution.
 - **[Supabase](https://supabase.com/)**: Real-time Postgres database with RESTful APIs, user authentication, and file storage.
+- **[Fumadocs](https://fumadocs.vercel.app/)**: Fumadocs is the documentation framework with excellent UI and user experience
 
 ## 🚀 Getting Started
 
@@ -117,3 +118,7 @@ Resend provides a convenient way to manage transactional emails, such as welcome
 ### Supabase Database
 
 Supabase is your powerful backend solution with a fully managed PostgreSQL database and real-time capabilities. Integrate new tables, views, and APIs to extend the functionality as your app grows.
+
+### Fumadocs
+
+Fumadocs is a mdx content generating for blog or documentation, you can either use mdx files or a cms(content management system)
