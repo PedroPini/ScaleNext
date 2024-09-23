@@ -1,5 +1,5 @@
 import { type HomeLayoutProps } from 'fumadocs-ui/home-layout';
-
+import config from '@/config';
 /**
  * Shared layout configurations
  *
@@ -9,7 +9,7 @@ import { type HomeLayoutProps } from 'fumadocs-ui/home-layout';
  */
 export const baseOptions: HomeLayoutProps = {
     nav: {
-        title: 'My App',
+        title: config.appName,
     },
     links: [
         {

@@ -13,7 +13,7 @@ const config = {
     { href: "#home", label: "Home", className: "text-primary font-medium" },
     { href: "#features", label: "Features" },
     { href: "#pricing", label: "Pricing" },
-    { href: "#faqs", label: "FAQs" },
+    { href: "/docs", label: "DOCS" },
   ],
    // Footer sections
    footerSections: [

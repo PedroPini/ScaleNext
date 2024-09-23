@@ -1,26 +1,18 @@
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { landings } from '@/components/ui/header/landings'; // Assume landings data is moved here
 import Link from "next/link";
+import LandingsDropdown from '@/components/ui/header/dropdown-item';
+import config from "@/config";
+
 const NavLinks = () => (
-    <ul className="hidden md:flex items-center gap-10 text-card-foreground">
-        <li className="text-primary font-medium"><a href="#home">Home</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#faqs">FAQs</a></li>
-        <li>
-            <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                    <span className="cursor-pointer">Pages</span>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="start">
-                    {landings.map((page) => (
-                        <DropdownMenuItem key={page.id}>
-                            <Link href={page.route}>{page.title}</Link>
-                        </DropdownMenuItem>
-                    ))}
-                </DropdownMenuContent>
-            </DropdownMenu>
-        </li>
+    <ul className="hidden md:flex items-center gap-10 text-card-foreground ">
+        {config.navigation.map((item, index) => (
+            <li key={index} className={item.className || ""}>
+                <Link href={item.href}>
+                    {item.label}
+                </Link>
+            </li>
+        ))}
+        <LandingsDropdown />
     </ul>
 );
 

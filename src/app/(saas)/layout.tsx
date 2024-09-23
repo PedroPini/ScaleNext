@@ -7,12 +7,14 @@ import dynamic from 'next/dynamic';
 import { ThemeProvider } from "@/components/theme-provider"
 import NavbarSkeleton from "@/components/ui/header/navbar-skeleton"
 import FooterSkeleton from "@/components/ui/footer-skeleton"
-const Navbar = dynamic(() => import("@/components/ui/header/navbar"), {
-    loading: () => <NavbarSkeleton />,
-});
-const Footer = dynamic(() => import("@/components/ui/footer"), {
-    loading: () => <FooterSkeleton />,
-});
+import Navbar from "@/components/ui/header/navbar"
+import Footer from "@/components/ui/footer"
+// const Navbar = dynamic(() => import("@/components/ui/header/navbar"), {
+//     loading: () => <NavbarSkeleton />,
+// });
+// const Footer = dynamic(() => import("@/components/ui/footer"), {
+//     loading: () => <FooterSkeleton />,
+// });
 
 const fontSans = FontSans({
     subsets: ["latin"],

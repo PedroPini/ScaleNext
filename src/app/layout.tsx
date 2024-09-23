@@ -5,17 +5,6 @@ import { ClerkProvider } from '@clerk/nextjs';
 import "./globals.css";
 import { cn } from "@/libs/utils"
 import { ThemeProvider } from "@/components/theme-provider"
-// import Header from "@/components/ui/header/header";
-import NavbarSkeleton from "@/components/ui/header/navbar-skeleton"
-import FooterSkeleton from "@/components/ui/footer-skeleton"
-import { RootProvider } from 'fumadocs-ui/provider';
-// Lazy load Navbar and Footer with skeletons
-const Navbar = dynamic(() => import("@/components/ui/header/navbar"), {
-  loading: () => <NavbarSkeleton />,
-});
-const Footer = dynamic(() => import("@/components/ui/footer"), {
-  loading: () => <FooterSkeleton />,
-});
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -53,11 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           >
 
             <main className="flex min-h-screen flex-col  justify-between">
-
-
               {children}
-
-
             </main>
 
           </ThemeProvider>
