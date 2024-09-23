@@ -1,4 +1,3 @@
-import dynamic from 'next/dynamic';
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google"
 import { ClerkProvider } from '@clerk/nextjs';
@@ -40,11 +39,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             themes={['light', 'dark', 'yellow']}
             disableTransitionOnChange
           >
-
             <main className="flex min-h-screen flex-col  justify-between">
               {children}
             </main>
-
           </ThemeProvider>
         </body>
       </html>
