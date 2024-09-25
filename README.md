@@ -72,14 +72,17 @@ Create a `.env.local` file in the root directory and add the following:
     ```env
     #NEXT
     NEXT_PUBLIC_BASE_URL=http://localhost:3000
+    
     #CLERK
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
     CLERK_SECRET_KEY=your_clerk_secret_key
     CLERK_JWT_KEY=your_clerk_jwt_key
+    
     #SUPABASE
     NEXT_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321
     NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
     NEXT_PUBLIC_SUPABASE_KEY=your_supabase_key
+    
     #STRIPE
     STRIPE_SECRET_KEY=your_stripe_secret_key
     NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
