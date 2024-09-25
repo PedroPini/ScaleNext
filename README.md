@@ -104,28 +104,4 @@ Visit [http://localhost:3000](http://localhost:3000) to view the application.
 
 The boilerplate is fully optimized for deployment on platforms like Vercel. To deploy, simply push your code to GitHub and connect it to your Vercel account.
 
-## 🎨 Customization
-
-### UI with Shadcn
-
-Shadcn's UI components are fully customizable with Tailwind CSS. You can easily extend, modify, and create new components to fit your application’s design requirements.
-
-### Authentication with Clerk
-
-Clerk makes it simple to manage user accounts, logins, and session states. For advanced use cases like role-based access control (RBAC) and team-based apps, Clerk provides additional functionalities right out of the box.
-
-### Payments with Stripe
-
-Stripe is configured to handle subscription and one-time payment models. Update your subscription plans or pricing by modifying the `pricing.js` file. Additionally, the boilerplate includes helper functions to manage customer billing information and subscriptions.
-
-### Email with Resend
-
-Resend provides a convenient way to manage transactional emails, such as welcome messages and payment confirmations. You can customize the email templates in the `/emails` directory.
-
-### Supabase Database
-
-Supabase is your powerful backend solution with a fully managed PostgreSQL database and real-time capabilities. Integrate new tables, views, and APIs to extend the functionality as your app grows.
-
-### Fumadocs
-
 
