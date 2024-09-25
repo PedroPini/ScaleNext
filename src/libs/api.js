@@ -1,12 +1,12 @@
-import axios from "axios";
-import { toast } from "react-hot-toast";
-import { redirect } from "next/navigation";
-import config from "@/config";
+import axios from 'axios';
+import { redirect } from 'next/navigation';
+import { toast } from 'react-hot-toast';
+import config from '@/config';
 
 // use this to interact with our own API (/app/api folder) from the front-end side
 
 const apiClient = axios.create({
-  baseURL: "/api",
+  baseURL: '/api',
 });
 
 apiClient.interceptors.response.use(
@@ -14,23 +14,23 @@ apiClient.interceptors.response.use(
     return response.data;
   },
   function (error) {
-    let message = "";
+    let message = '';
 
     if (error.response?.status === 401) {
       // User not auth, ask to re login
-      toast.error("Please login");
+      toast.error('Please login');
       // Sends the user to the login page
       redirect(config.auth.loginUrl);
     } else if (error.response?.status === 403) {
       // User not authorized, must subscribe/purchase/pick a plan
-      message = "Pick a plan to use this feature";
+      message = 'Pick a plan to use this feature';
     } else {
       message =
         error?.response?.data?.error || error.message || error.toString();
     }
 
     error.message =
-      typeof message === "string" ? message : JSON.stringify(message);
+      typeof message === 'string' ? message : JSON.stringify(message);
 
     console.error(error.message);
 
@@ -38,7 +38,7 @@ apiClient.interceptors.response.use(
     if (error.message) {
       toast.error(error.message);
     } else {
-      toast.error("something went wrong...");
+      toast.error('something went wrong...');
     }
     return Promise.reject(error);
   }

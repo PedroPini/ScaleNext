@@ -1,6 +1,6 @@
-"use client";
+'use client';
+import Link from 'next/link';
 import { useEffect } from 'react'
-import Link from "next/link";
 // import ButtonSupport from "@/components/ButtonSupport";
 
 // A simple error boundary to show a nice error page if something goes wrong (Error Boundary)

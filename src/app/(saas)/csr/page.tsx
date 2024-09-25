@@ -1,11 +1,11 @@
 'use client'
-import { useEffect, useState } from 'react'
 import { useSession, useUser } from '@clerk/nextjs'
+import { useEffect, useState } from 'react'
 import Layout from '@/app/(saas)/shared/layout'
+import { Alert } from '@/components/ui/alert'
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { useClerkSupabaseClient } from '@/utils/supabase/client'
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Alert } from "@/components/ui/alert"
 export default function Home() {
   const [tasks, setTasks] = useState<any[]>([])
   const [loading, setLoading] = useState(true)

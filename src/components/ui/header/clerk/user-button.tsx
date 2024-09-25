@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react';
 import { UserButton, useUser } from '@clerk/nextjs';
+import { useState, useEffect } from 'react';
 
 export default function NavbarUserButton() {
     const { user, isLoaded } = useUser(); // useUser hook to get the user data
@@ -10,7 +10,7 @@ export default function NavbarUserButton() {
 
     useEffect(() => {
         if (isLoaded && user) {
-            const isPaid = user?.publicMetadata?.stripe?.status === "complete";
+            const isPaid = user?.publicMetadata?.stripe?.status === 'complete';
             setIsSubscriber(isPaid);
             setLoading(false);
         }

@@ -1,11 +1,11 @@
-// import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import dynamic from 'next/dynamic';
+import { Button } from '@/components/ui/button';
 import NavbarUserButton from '@/components/ui/header/clerk/user-button'
 // Dynamically import components
 const SignInButton = dynamic(() => import('@clerk/nextjs').then(mod => mod.SignInButton));
 const SignedIn = dynamic(() => import('@clerk/nextjs').then(mod => mod.SignedIn));
 const SignedOut = dynamic(() => import('@clerk/nextjs').then(mod => mod.SignedOut));
-import { Button } from '@/components/ui/button';
+
 
 const AuthButtons = () => (
     <div className="flex items-center">

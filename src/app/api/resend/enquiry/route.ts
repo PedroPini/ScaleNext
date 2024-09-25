@@ -1,5 +1,5 @@
-import { Resend } from 'resend';
 import { NextRequest, NextResponse } from 'next/server';
+import { Resend } from 'resend';
 import { UserEnquiryEmail } from '@/components/email/react-email/enquiry';
 
 const resend = new Resend(process.env.RESEND_API_KEY);

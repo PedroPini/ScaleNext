@@ -1,57 +1,57 @@
+import { nanoid } from 'nanoid';
+import Link from 'next/link';
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import Link from "next/link";
-import { nanoid } from "nanoid";
+} from '@/components/ui/dropdown-menu';
 
 const landings = [
     {
         id: nanoid(),
-        title: "Landing 01",
-        route: "/project-management",
+        title: 'Landing 01',
+        route: '/project-management',
     },
     {
         id: nanoid(),
-        title: "Landing 02",
-        route: "/crm-landing",
+        title: 'Landing 02',
+        route: '/crm-landing',
     },
     {
         id: nanoid(),
-        title: "Landing 03",
-        route: "/ai-content-landing",
+        title: 'Landing 03',
+        route: '/ai-content-landing',
     },
     {
         id: nanoid(),
-        title: "Landing 04",
-        route: "/new-intro-landing",
+        title: 'Landing 04',
+        route: '/new-intro-landing',
     },
     {
         id: nanoid(),
-        title: "Landing 05",
-        route: "/about-us-landing",
+        title: 'Landing 05',
+        route: '/about-us-landing',
     },
     {
         id: nanoid(),
-        title: "Landing 06",
-        route: "/contact-us-landing",
+        title: 'Landing 06',
+        route: '/contact-us-landing',
     },
     {
         id: nanoid(),
-        title: "Landing 07",
-        route: "/faqs-landing",
+        title: 'Landing 07',
+        route: '/faqs-landing',
     },
     {
         id: nanoid(),
-        title: "Landing 08",
-        route: "/pricing-landing",
+        title: 'Landing 08',
+        route: '/pricing-landing',
     },
     {
         id: nanoid(),
-        title: "Landing 09",
-        route: "/career-landing",
+        title: 'Landing 09',
+        route: '/career-landing',
     },
 ];
 

@@ -1,11 +1,11 @@
-import { NextResponse } from "next/server";
-import { headers } from "next/headers";
-import Stripe from "stripe";
 import { clerkClient, currentUser } from '@clerk/nextjs/server'
-import configFile from "@/config";
-import { SendEmail } from "@/libs/resend"
-import stripe from "@/libs/stripe"
-import {StripeWelcome } from "@/components/email/react-email/stripe/welcome"
+import { headers } from 'next/headers';
+import { NextResponse } from 'next/server';
+import Stripe from 'stripe';
+import {StripeWelcome } from '@/components/email/react-email/stripe/welcome'
+import configFile from '@/config';
+import { SendEmail } from '@/libs/resend'
+import stripe from '@/libs/stripe'
 // Stripe webhook secret
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET as string;
 
@@ -19,7 +19,7 @@ interface ClerkMetadataUpdate {
 // POST handler for Stripe webhooks
 export async function POST(req: Request): Promise<Response> {
   const body = await req.text();
-  const signature = headers().get("stripe-signature");
+  const signature = headers().get('stripe-signature');
 
   let event: Stripe.Event;
   try {
@@ -35,7 +35,7 @@ export async function POST(req: Request): Promise<Response> {
   
   try {
     switch (eventType) {
-      case "checkout.session.completed": {
+      case 'checkout.session.completed': {
       const session = event.data.object;
       const customerId = session?.customer as string;
       const customerEmail = session.customer_details?.email;
@@ -70,7 +70,7 @@ export async function POST(req: Request): Promise<Response> {
       emailTemplate: StripeWelcome,
       attachments: [
         {
-          filename: "Invoice.pdf",
+          filename: 'Invoice.pdf',
           path: invoicePdf, // This is the URL to the PDF, can be included as an attachment
         },
       ],
@@ -80,17 +80,17 @@ export async function POST(req: Request): Promise<Response> {
         break;
       }
 
-      case "checkout.session.expired": {
+      case 'checkout.session.expired': {
         // Optionally handle expired session
         break;
       }
 
-      case "customer.subscription.updated": {
+      case 'customer.subscription.updated': {
         // Optionally handle subscription updates
         break;
       }
 
-      case "customer.subscription.deleted": {
+      case 'customer.subscription.deleted': {
         // Revoke access in Clerk metadata
         await clerkClient.users.updateUser(event.data.object.metadata?.userId as string, {
           privateMetadata: {
@@ -110,12 +110,12 @@ export async function POST(req: Request): Promise<Response> {
         break;
       }
 
-      case "invoice.paid": {
+      case 'invoice.paid': {
 
         break;
       }
 
-      case "invoice.payment_failed": {
+      case 'invoice.payment_failed': {
         // Optionally handle payment failure
         break;
       }

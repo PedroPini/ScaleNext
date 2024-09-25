@@ -1,6 +1,6 @@
+import { currentUser } from '@clerk/nextjs/server'
 import { NextResponse } from 'next/server'
 import Stripe from 'stripe'
-import { currentUser } from '@clerk/nextjs/server'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2024-06-20',
@@ -21,7 +21,7 @@ export async function POST(req: Request) {
     if (!user) {
       return new NextResponse('You need to sign in first.', { status: 401 })
     }
-    const isPaidUser = user.publicMetadata?.stripe?.status === "complete";
+    const isPaidUser = user.publicMetadata?.stripe?.status === 'complete';
     if (session.payment_status === 'paid' && isPaidUser) {
 
       return NextResponse.json({ success: true })

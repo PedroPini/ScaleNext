@@ -1,7 +1,7 @@
 // pages/api/stripe/webhook.ts
+import { buffer } from 'micro'
 import { NextApiRequest, NextApiResponse } from 'next'
 import Stripe from 'stripe'
-import { buffer } from 'micro'
 import stripeClient from '@/libs/stripe'
 import { createClerkSupabaseClient } from '@/utils/supabase/server'
 

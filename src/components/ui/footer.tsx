@@ -1,10 +1,10 @@
 
-import Image from "next/image";
-import logo from "@/app/icon.png";
-import config from "@/config";
+import Image from 'next/image';
+import logo from '@/app/icon.png';
+import config from '@/config';
 const Footer = () => {
     return (
-        <footer className="bg-white dark:bg-gray-900">
+        <footer className=" dark:bg-gray-900">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">

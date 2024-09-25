@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import config from '@/config';
 import logo from '@/app/icon.png';
+import config from '@/config';
 
 const Logo = () => (
     <div className="flex lg:flex-1">

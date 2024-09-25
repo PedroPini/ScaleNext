@@ -1,10 +1,10 @@
 'use client'
-import { Button } from '@/components/ui/button'
 import { DeleteIcon } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 import { FiCheckCircle, FiCircle } from 'react-icons/fi'
 import { deleteTask, setTaskState } from './actions'
-import { useRouter } from 'next/navigation'
+import { Button } from '@/components/ui/button'
 
 type Props = {
     id: number

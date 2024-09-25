@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
     Dialog,
     DialogContent,
@@ -8,11 +8,11 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
+} from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { useToast } from '@/hooks/use-toast';
 
 interface ContactFormProps {
     open: boolean;
@@ -76,7 +76,7 @@ export default function ContactForm({ open, setOpen }: ContactFormProps) {
                 <DialogHeader>
                     <DialogTitle>Contact Us</DialogTitle>
                     <DialogDescription>
-                        Send us a message and we'll get back to you as soon as possible.
+                        Send us a message and we&apos;ll get back to you as soon as possible.
                     </DialogDescription>
                 </DialogHeader>
                 <form onSubmit={handleSubmit}>

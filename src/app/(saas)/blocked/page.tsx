@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import React from "react";
-import Link from "next/link";
+import Link from 'next/link';
+import React from 'react';
 
 const Blocked = () => {
     return (
@@ -15,8 +15,8 @@ const Blocked = () => {
             <div>
                 <Link className="link" href="/">
                     Login
-                </Link>{" "}
-                or{" "}
+                </Link>{' '}
+                or{' '}
                 <Link className="link" href="/">
                     Home
                 </Link>

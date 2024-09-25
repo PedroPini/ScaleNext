@@ -1,7 +1,7 @@
-import { createClerkSupabaseClient } from '@/utils/supabase/server';
-import TaskRow from './task-row';
 import AddTaskForm from './add-task-form';
+import TaskRow from './task-row';
 import Layout from '@/app/(saas)/shared/layout'
+import { createClerkSupabaseClient } from '@/utils/supabase/server';
 // 👉 Register the `Clerk` object  the global window fix TypeScript errors
 declare global {
     interface Window {
