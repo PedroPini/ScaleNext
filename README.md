@@ -1,5 +1,8 @@
 # ♻ ScaleNext - A fully integrated SaaS Boilerplate
 
+![ScaleNext](https://github.com/user-attachments/assets/3f22d171-c5ae-42f1-87ce-b3364a1bb9b5)
+
+
 A modern and highly scalable Next.js boilerplate with integrated authentication, payments, email functionality, and UI components — everything you need to jumpstart your SaaS application!
 
 ![image](https://github.com/user-attachments/assets/ac72588c-e441-4066-bc9c-198cd88700d0)
