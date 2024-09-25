@@ -16,6 +16,7 @@ A modern and highly scalable Next.js boilerplate with integrated authentication,
 - **Shadcn UI**: Beautifully designed, customizable, and accessible UI components built using Tailwind CSS.
 - **Clerk for Authentication**: Robust and secure user authentication and session management via Clerk.
 - **Supabase for Database**: Scalable and efficient backend-as-a-service with PostgreSQL databases, real-time data syncing, and authentication.
+- **Fumadocs for Documentation or CMS**: Documentation framework designed for Next.js applications, providing a simple and flexible way to generate and manage documentation
   
 ## 📦 Tech Stack
 
