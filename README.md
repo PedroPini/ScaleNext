@@ -20,13 +20,13 @@ A modern and highly scalable Next.js boilerplate with integrated authentication,
   
 ## 📦 Tech Stack
 
-- **[Next.js](https://nextjs.org/)**: Server-side rendering, static site generation, API routes, and full-stack development with React.
-- **[Stripe](https://stripe.com/)**: Payment processing with a fully customizable API for handling subscriptions and payments.
-- **[Resend](https://resend.com/)**: Powerful email APIs and React-based email templates.
-- **[Shadcn](https://shadcn.dev/)**: Pre-built UI components integrated with Tailwind CSS for a great developer experience.
-- **[Clerk](https://clerk.dev/)**: Comprehensive user authentication and management solution.
-- **[Supabase](https://supabase.com/)**: Real-time Postgres database with RESTful APIs, user authentication, and file storage.
-- **[Fumadocs](https://fumadocs.vercel.app/)**: Fumadocs is the documentation framework with excellent UI and user experience
+- **[Next.js](https://nextjs.org/)**: Framework
+- **[Stripe](https://stripe.com/)**: Payment
+- **[Resend](https://resend.com/)**: Email
+- **[Shadcn](https://shadcn.dev/)**: UI Library
+- **[Clerk](https://clerk.dev/)**: Authentication
+- **[Supabase](https://supabase.com/)**: Database
+- **[Fumadocs](https://fumadocs.vercel.app/)**: Documentation
 
 ## 🚀 Getting Started
 
