@@ -70,22 +70,29 @@ Make sure you have the following installed:
 Create a `.env.local` file in the root directory and add the following:
 
     ```env
-    # Next.js
-    NEXT_PUBLIC_CLERK_FRONTEND_API=<your-clerk-frontend-api>
-
-    # Clerk
-    CLERK_API_KEY=<your-clerk-api-key>
-
-    # Stripe
-    STRIPE_SECRET_KEY=<your-stripe-secret-key>
-    NEXT_PUBLIC_STRIPE_PUBLIC_KEY=<your-stripe-public-key>
-
-    # Supabase
-    NEXT_PUBLIC_SUPABASE_URL=<your-supabase-url>
-    NEXT_PUBLIC_SUPABASE_ANON_KEY=<your-supabase-anon-key>
-
-    # Resend
-    RESEND_API_KEY=<your-resend-api-key>
+    #NEXT
+    NEXT_PUBLIC_BASE_URL=http://localhost:3000
+    #CLERK
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+    CLERK_SECRET_KEY=your_clerk_secret_key
+    CLERK_JWT_KEY=your_clerk_jwt_key
+    #SUPABASE
+    NEXT_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+    NEXT_PUBLIC_SUPABASE_KEY=your_supabase_key
+    #STRIPE
+    STRIPE_SECRET_KEY=your_stripe_secret_key
+    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+    STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
+    
+    #UPSTASH
+    UPSTASH_REDIS_REST_URL=your_upstash_redis_rest_url
+    UPSTASH_REDIS_REST_TOKEN=your_upstash_redis_rest_token
+    
+    #EMAIL
+    RESEND_API_KEY=your_resend_api_key
+    MY_EMAIL=your_email@example.com
+    LOCALHOST="127.0.0.1"
     ```
 
 ### Running the App
