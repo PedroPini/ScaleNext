@@ -114,4 +114,8 @@ Visit [http://localhost:3000](http://localhost:3000) to view the application.
 
 The boilerplate is fully optimized for deployment on platforms like Vercel. To deploy, simply push your code to GitHub and connect it to your Vercel account.
 
+### Issues or FeedBack
+
+If you encounter any issues or have feedback, feel free to open an issue or submit a pull request.
+
 
