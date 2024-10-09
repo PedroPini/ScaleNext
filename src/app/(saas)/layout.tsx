@@ -10,10 +10,11 @@ const fontSans = FontSans({
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
-        <div className="bg-gradient-to-b from-background to-secondary">
-
+      <div className="min-h-screen flex flex-col bg-gradient-to-b from-background to-secondary">
             <Navbar />
-            {children}
+            <main className="flex-grow">
+                {children}
+            </main>
             <Footer />
         </div>
     );
