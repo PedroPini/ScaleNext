@@ -6,7 +6,7 @@ let supabaseClient: SupabaseClient | null = null;
 export function useClerkSupabaseClient() {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
   const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY!
-  const { getToken } = useAuth()
+  const { getToken, userId } = useAuth()
 
   if (!supabaseClient) {
     supabaseClient = createClient(supabaseUrl, supabaseKey, {
@@ -25,4 +25,9 @@ export function useClerkSupabaseClient() {
   }
 
   return supabaseClient;
+}
+
+export function useUserId() {
+  const { userId } = useAuth();
+  return userId;
 }
